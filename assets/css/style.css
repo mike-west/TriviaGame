@@ -4,14 +4,20 @@
 
 .card {
     margin-top: 150px;
+    float: none;
 }
 
 .btn {
     margin-top: 20px;
 }
 
-#timer {
+.card-header {
     color: #ffffff;
     background-color: #000000;
     font-weight: bold;
+}
+
+#start-card,p {
+    text-align: left;
+    margin-bottom: 20px
 }
