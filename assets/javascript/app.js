@@ -11,6 +11,9 @@ window.onload = function (event) {
         $("#quiz-card").show();
         startTimer(3);
     });
+    $("#sub-btn").click(function() {
+        timeRemaining = 0;
+    });
 
     function startTimer(min) {
         timeRemaining = min * SECONDS_IN_MIN;
@@ -75,9 +78,9 @@ window.onload = function (event) {
         });
 
         var percent = Math.floor((rightAnswers / TOTALQUESTIONS) * 100);
-        $("#right_and_wrong").text("You had " + rightAnswers + " right answers and " + wrongAnswers + " wrong answers");
+        $("#right-and-wrong").text("You had " + rightAnswers + " right answers and " + wrongAnswers + " wrong answers");
         
-        var comment = "You sorced " + percent + "%. ";
+        var comment = "You scored " + percent + "%. ";
         if (percent >= 90) {
             comment = comment + " BAZINGA! I'll bet you hang out at the comic book store too";
         } else if (percent >= 80) {
