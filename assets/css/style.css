@@ -22,6 +22,10 @@
     font-weight: bold;
 }
 
+.card-footer {
+    background-image: url("../images/bbt-cast.jpg");
+}
+
 #start-card,p {
     text-align: left;
     margin-bottom: 20px
