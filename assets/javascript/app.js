@@ -1,4 +1,5 @@
 var SECONDS_IN_MIN = 60;
+var TOTALQUESTIONS = 10;
 var timeRemaining = 0;
 var intervalId;
 
@@ -59,11 +60,34 @@ window.onload = function (event) {
 
     function getScore() {
         var rightAnswers=0
-        var wrongAnswers=3;
+        var wrongAnswers=TOTALQUESTIONS;
 
         // get all inputs that are right answers and checked
         var checkedAnswers = $('.form-check-input:checked').map(function() {
             return this.value   ;
         }).get();
+
+        checkedAnswers.forEach(function(item) {
+            if (item==='right') {
+                ++rightAnswers;
+                --wrongAnswers;
+            }
+        });
+
+        var percent = Math.floor((rightAnswers / TOTALQUESTIONS) * 10);
+        $("#right_and_wrong").text("You had " + rightAnswers + " right answers and " + wrongAnswers + " wrong answers");
+        
+        var comment = "You sorced " + percent + "%. ";
+        if (percent >= 90) {
+            comment = comment + " BAZINGA! I'll bet you hang out at the comic book store too";
+        } else if (percent >= 80) {
+            comment = comment + " Excellent! You're a Cheesecake Factory regular."
+        } else if (percent >= 50) {
+            comment = comment + " Hmm. You need to talk to Leonard's mother about paying attention";
+        } else {
+            comment = comment + "Do you even watch the show?"
+        }
+
+        $("#comment").text(comment);
     }
 }
