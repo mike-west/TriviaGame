@@ -22,21 +22,18 @@
     font-weight: bold;
 }
 
-.card-body {
-    overflow-y: scroll;
-}
-
 #start-card,p {
     text-align: left;
     margin-bottom: 20px
 }
 
-/* .form-check-label {
+.form-check-label {
     margin-right: 10px;
-} */
+}
 
 p[class="text-center"] {
     border-top: 1px solid black;
+    padding-top: 3px;
 }
 
 body {
