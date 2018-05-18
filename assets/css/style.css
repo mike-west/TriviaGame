@@ -22,6 +22,10 @@
     margin-bottom: 20px
 }
 
+.form-check-label {
+    margin-right: 10px;
+}
+
 body {
     background-image: url("../images/bbt-atom.jpg");
 }

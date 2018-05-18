@@ -41,10 +41,29 @@ window.onload = function (event) {
         var converted = timeConverter(timeRemaining);
         $("#time-remaining").text(converted);
 
+        if (timeRemaining <=20) {
+            $("#time-remaining").css("color", "yellow");
+        }
+
+        if (timeRemaining <=10) {
+            $("#time-remaining").css("color", "red");
+        }
+
         if (timeRemaining <= 0) {
             clearInterval(intervalId);
             $("#quiz-card").hide();
+            getScore();
             $("#results-card").show();
         }
+    }
+
+    function getScore() {
+        var rightAnswers=0
+        var wrongAnswers=3;
+
+        // get all inputs that are right answers and checked
+        var checkedAnswers = $('.form-check-input:checked').map(function() {
+            return this.value   ;
+        }).get();
     }
 }
