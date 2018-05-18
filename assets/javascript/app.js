@@ -9,7 +9,7 @@ window.onload = function (event) {
     $("#start-btn").click(function () {
         $("#start-card").hide();
         $("#quiz-card").show();
-        startTimer(1);
+        startTimer(3);
     });
 
     function startTimer(min) {
@@ -74,7 +74,7 @@ window.onload = function (event) {
             }
         });
 
-        var percent = Math.floor((rightAnswers / TOTALQUESTIONS) * 10);
+        var percent = Math.floor((rightAnswers / TOTALQUESTIONS) * 100);
         $("#right_and_wrong").text("You had " + rightAnswers + " right answers and " + wrongAnswers + " wrong answers");
         
         var comment = "You sorced " + percent + "%. ";
